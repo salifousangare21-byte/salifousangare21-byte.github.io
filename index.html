@@ -252,6 +252,7 @@ footer{padding:26px 64px;border-top:1px solid var(--border);display:flex;justify
 
 
 /* ===== HAMBURGER MENU ===== */
+#lang-toggle:hover{background:rgba(123,94,167,0.15);border-color:var(--vl);}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;}
 .hamburger span{width:22px;height:2px;background:var(--white);border-radius:2px;transition:all .3s;}
 .mob-menu{display:none;position:fixed;inset:0;background:rgba(6,4,14,0.97);backdrop-filter:blur(20px);z-index:800;flex-direction:column;align-items:center;justify-content:center;gap:36px;}
@@ -374,10 +375,11 @@ footer{padding:26px 64px;border-top:1px solid var(--border);display:flex;justify
     <a href="#automation">Automation</a>
     <a href="#clients">Clients</a>
     <a href="#stack">Stack</a>
-    <a href="#parcours">Parcours</a>
-    <a href="#contact">Contact</a>
+    <a href="#parcours" data-i18n="nav-parcours">Parcours</a>
+    <a href="#contact" data-i18n="nav-contact">Contact</a>
   </div>
-  <a href="mailto:salifousangare21@gmail.com" class="nbtn">Me contacter</a>
+  <a href="mailto:salifousangare21@gmail.com" class="nbtn" data-i18n="nav-btn">Me contacter</a>
+  <button id="lang-toggle" onclick="toggleLang()" style="background:none;border:1px solid rgba(123,94,167,0.4);color:var(--vl);font-size:12px;font-weight:600;padding:7px 14px;border-radius:100px;cursor:none;letter-spacing:1px;transition:all .3s;font-family:'Plus Jakarta Sans',sans-serif;">EN</button>
   <button class="hamburger" id="ham" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
@@ -390,9 +392,9 @@ footer{padding:26px 64px;border-top:1px solid var(--border);display:flex;justify
   <a href="#automation" onclick="closeMob()">Automation</a>
   <a href="#clients" onclick="closeMob()">Clients</a>
   <a href="#stack" onclick="closeMob()">Stack</a>
-  <a href="#parcours" onclick="closeMob()">Parcours</a>
-  <a href="#contact" onclick="closeMob()">Contact</a>
-  <a href="mailto:salifousangare21@gmail.com" class="cm" style="margin-top:8px;font-size:14px;font-family:'Plus Jakarta Sans',sans-serif;font-style:normal;">Me contacter</a>
+  <a href="#parcours" onclick="closeMob()" data-i18n="mob-parcours">Parcours</a>
+  <a href="#contact" onclick="closeMob()" data-i18n="mob-contact">Contact</a>
+  <a href="mailto:salifousangare21@gmail.com" class="cm" style="margin-top:8px;font-size:14px;font-family:'Plus Jakarta Sans',sans-serif;font-style:normal;" data-i18n="mob-btn">Me contacter</a>
 </div>
 
 <!-- HERO -->
@@ -409,15 +411,15 @@ footer{padding:26px 64px;border-top:1px solid var(--border);display:flex;justify
 
     <!-- LEFT: TEXT -->
     <div class="hero-text-col" style="padding:140px 40px 80px 0;animation:up .9s ease both;">
-      <div class="badge" style="margin-bottom:28px;"><span class="bp"></span>Disponible · Remote · Abidjan, Côte d'Ivoire</div>
+      <div class="badge" style="margin-bottom:28px;"><span class="bp"></span><span data-i18n="hero-badge">Disponible · Remote · Abidjan, Côte d'Ivoire</span></div>
       <div class="hname" style="font-size:clamp(44px,6vw,80px);margin-bottom:16px;">
         Salifou<br>
         <span class="ghost">San<span class="glow">garé.</span></span>
       </div>
-      <p class="hsub" style="max-width:440px;font-size:15.5px;margin:20px 0 36px;"><strong>Growth Marketer & AI Builder</strong> — je transforme des processus marketing complexes en systèmes automatisés, intelligents et scalables. 6 ans à construire des pipelines qui performent.</p>
+      <p class="hsub" style="max-width:440px;font-size:15.5px;margin:20px 0 36px;" data-i18n="hero-sub"><strong>Growth Marketer & AI Builder</strong> — je transforme des processus marketing complexes en systèmes automatisés, intelligents et scalables. 6 ans à construire des pipelines qui performent.</p>
       <div class="hctas">
-        <a href="#portfolio" class="cm">Voir mes projets</a>
-        <a href="mailto:salifousangare21@gmail.com" class="cg">Me contacter</a>
+        <a href="#portfolio" class="cm" data-i18n="hero-cta1">Voir mes projets</a>
+        <a href="mailto:salifousangare21@gmail.com" class="cg" data-i18n="hero-cta2">Me contacter</a>
       </div>
       <!-- status badge -->
       <div style="margin-top:36px;display:inline-flex;align-items:center;gap:10px;padding:10px 18px;background:rgba(16,13,35,0.8);border:1px solid rgba(123,94,167,0.35);border-radius:12px;backdrop-filter:blur(12px);">
@@ -447,23 +449,23 @@ footer{padding:26px 64px;border-top:1px solid var(--border);display:flex;justify
 
 <!-- STATS -->
 <div class="stats-bar">
-  <div class="sc"><div class="sn"><span class="cnt" data-t="6">0</span>+</div><div class="sl">Années d'expérience</div></div>
-  <div class="sc"><div class="sn"><span class="cnt" data-t="7">0</span></div><div class="sl">Marchés gérés</div></div>
-  <div class="sc"><div class="sn">+<span class="cnt" data-t="50">0</span>%</div><div class="sl">Croissance SEO</div></div>
-  <div class="sc"><div class="sn">−<span class="cnt" data-t="40">0</span>%</div><div class="sl">Réduction CPA</div></div>
+  <div class="sc"><div class="sn"><span class="cnt" data-t="6">0</span>+</div><div class="sl" data-i18n="stat1">Années d'expérience</div></div>
+  <div class="sc"><div class="sn"><span class="cnt" data-t="7">0</span></div><div class="sl" data-i18n="stat2">Marchés gérés</div></div>
+  <div class="sc"><div class="sn">+<span class="cnt" data-t="50">0</span>%</div><div class="sl" data-i18n="stat3">Croissance SEO</div></div>
+  <div class="sc"><div class="sn">−<span class="cnt" data-t="40">0</span>%</div><div class="sl" data-i18n="stat4">Réduction CPA</div></div>
 </div>
 
 <!-- IMPACT -->
 <section class="sec imp-bg">
   <div class="si">
-    <div class="rev"><div class="stag">Résultats mesurés</div><h2 class="sh">Des chiffres qui<br><em>ne mentent pas</em></h2></div>
+    <div class="rev"><div class="stag" data-i18n="impact-tag">Résultats mesurés</div><h2 class="sh"><span data-i18n="impact-title">Des chiffres qui<br><em>ne mentent pas</em></span></h2></div>
     <div class="imp-grid rev" style="grid-template-columns:repeat(3,1fr);">
-      <div class="ic"><div class="in">+<span class="cnt-s" data-t="40">0</span>%</div><div class="il">Installations mobiles via Google App Campaigns</div></div>
-      <div class="ic"><div class="in">−<span class="cnt-s" data-t="25">0</span>%</div><div class="il">Réduction du coût par acquisition (CPA)</div></div>
-      <div class="ic"><div class="in">+<span class="cnt-s" data-t="50">0</span>%</div><div class="il">Croissance du trafic organique SEO</div></div>
-      <div class="ic"><div class="in">+<span class="cnt-s" data-t="30">0</span>%</div><div class="il">Taux de conversion optimisé via A/B testing</div></div>
-      <div class="ic"><div class="in">−<span class="cnt-s" data-t="40">0</span>%</div><div class="il">Temps de traitement leads réduit par IA</div></div>
-      <div class="ic"><div class="in">+<span class="cnt-s" data-t="20">0</span>%</div><div class="il">Engagement utilisateur via automation & retargeting</div></div>
+      <div class="ic"><div class="in">+<span class="cnt-s" data-t="40">0</span>%</div><div class="il" data-i18n="impact1">Installations mobiles via Google App Campaigns</div></div>
+      <div class="ic"><div class="in">−<span class="cnt-s" data-t="25">0</span>%</div><div class="il" data-i18n="impact2">Réduction du coût par acquisition (CPA)</div></div>
+      <div class="ic"><div class="in">+<span class="cnt-s" data-t="50">0</span>%</div><div class="il" data-i18n="impact3">Croissance du trafic organique SEO</div></div>
+      <div class="ic"><div class="in">+<span class="cnt-s" data-t="30">0</span>%</div><div class="il" data-i18n="impact4">Taux de conversion optimisé via A/B testing</div></div>
+      <div class="ic"><div class="in">−<span class="cnt-s" data-t="40">0</span>%</div><div class="il" data-i18n="impact5">Temps de traitement leads réduit par IA</div></div>
+      <div class="ic"><div class="in">+<span class="cnt-s" data-t="20">0</span>%</div><div class="il" data-i18n="impact6">Engagement utilisateur via automation & retargeting</div></div>
     </div>
   </div>
 </section>
@@ -471,7 +473,7 @@ footer{padding:26px 64px;border-top:1px solid var(--border);display:flex;justify
 <!-- PORTFOLIO SITES -->
 <section class="sec port-bg" id="portfolio">
   <div class="si">
-    <div class="rev"><div class="stag">Sites web conçus & pilotés</div><h2 class="sh">SEO · SEA · Ads · Automation<br><em>pour chaque client</em></h2></div>
+    <div class="rev"><div class="stag" data-i18n="port-tag">Sites web conçus & pilotés</div><h2 class="sh"><span data-i18n="port-title">SEO · SEA · Ads · Automation<br><em>pour chaque client</em></span></h2></div>
     <div class="port-grid">
 
       <div class="port-card">
@@ -598,7 +600,7 @@ footer{padding:26px 64px;border-top:1px solid var(--border);display:flex;justify
 <!-- AUTOMATION / MAKE -->
 <section class="sec make-bg" id="automation">
   <div class="si">
-    <div class="rev"><div class="stag">Automation IA — Make</div><h2 class="sh">Des workflows réels,<br><em>en production</em></h2></div>
+    <div class="rev"><div class="stag" data-i18n="auto-tag">Automation IA — Make</div><h2 class="sh"><span data-i18n="auto-title">Des workflows réels,<br><em>en production</em></span></h2></div>
     <div class="make-grid">
       <div class="make-card">
         <div style="overflow:hidden;">
@@ -630,8 +632,8 @@ footer{padding:26px 64px;border-top:1px solid var(--border);display:flex;justify
 <!-- CLIENTS TICKER -->
 <section class="sec clients-bg" id="clients">
   <div class="si rev" style="text-align:center;margin-bottom:52px;">
-    <div class="stag" style="justify-content:center;">Ils m'ont fait confiance</div>
-    <h2 class="sh" style="margin-bottom:0;">Clients & <em>partenaires</em></h2>
+    <div class="stag" style="justify-content:center;" data-i18n="clients-tag">Ils m'ont fait confiance</div>
+    <h2 class="sh" style="margin-bottom:0;"><span data-i18n="clients-title">Clients & <em>partenaires</em></span></h2>
   </div>
   <div class="ticker-wrap rev">
     <div class="ticker">
@@ -674,9 +676,9 @@ footer{padding:26px 64px;border-top:1px solid var(--border);display:flex;justify
   <div class="si">
     <div class="sk-layout">
       <div class="rev">
-        <div class="stag">Stack technique</div>
-        <div class="sk-big">Des outils.<em>Des résultats.</em></div>
-        <p class="sk-p">Je n'accumule pas les outils. Je les assemble pour créer des systèmes qui travaillent en continu, sans friction.</p>
+        <div class="stag" data-i18n="stack-tag">Stack technique</div>
+        <div class="sk-big"><span data-i18n="stack-big">Des outils.<em>Des résultats.</em></span></div>
+        <p class="sk-p" data-i18n="stack-p">Je n'accumule pas les outils. Je les assemble pour créer des systèmes qui travaillent en continu, sans friction.</p>
       </div>
       <div class="sk-groups rev">
         <div class="sg"><div class="sgh"><div class="sgd"></div><div class="sgn">IA & Automation</div></div><div class="pills"><span class="pill">Claude API</span><span class="pill">Claude Code</span><span class="pill">ChatGPT</span><span class="pill">Gemini</span><span class="pill">Make</span><span class="pill">Zapier</span><span class="pill">API REST</span><span class="pill">Webhooks</span></div></div>
@@ -691,7 +693,7 @@ footer{padding:26px 64px;border-top:1px solid var(--border);display:flex;justify
 <!-- EXPERIENCE -->
 <section class="sec exp-bg" id="parcours">
   <div class="si">
-    <div class="rev"><div class="stag">Parcours</div><h2 class="sh">3 entreprises,<br><em>une seule obsession</em></h2></div>
+    <div class="rev"><div class="stag" data-i18n="exp-tag">Parcours</div><h2 class="sh"><span data-i18n="exp-title">3 entreprises,<br><em>une seule obsession</em></span></h2></div>
     <div class="exp-wrap">
       <div class="er">
         <div class="el"><div class="ep">Sept. 2022 — Aujourd'hui</div><div class="eco">Côte Ouest Audiovisuel</div></div>
@@ -733,13 +735,13 @@ footer{padding:26px 64px;border-top:1px solid var(--border);display:flex;justify
         </div>
       </div>
       <div class="rev">
-        <div class="stag">À propos</div>
+        <div class="stag" data-i18n="about-tag">À propos</div>
         <div class="ab-name">Salifou Sangaré</div>
-        <div class="ab-role">Growth Marketer · AI Builder · Ivoirien</div>
-        <div class="ab-bio">Je crois que l'avenir du marketing n'est pas dans les tactiques isolées, mais dans les <strong style="color:var(--white)">systèmes intelligents</strong> qui connectent chaque point de contact. C'est ce que je construis depuis 6 ans — des machines à croissance qui scalent sans friction.</div>
+        <div class="ab-role" data-i18n="about-role">Growth Marketer · AI Builder · Ivoirien</div>
+        <div class="ab-bio"><span data-i18n="about-bio">Je crois que l'avenir du marketing n'est pas dans les tactiques isolées, mais dans les <strong style="color:var(--white)">systèmes intelligents</strong> qui connectent chaque point de contact. C'est ce que je construis depuis 6 ans — des machines à croissance qui scalent sans friction.</span></div>
         <div class="ab-infos">
-          <div class="ir"><span class="ik">Formation</span><span class="iv">Master 2 Marketing & Management, IFSM Cocody</span></div>
-          <div class="ir"><span class="ik">Langues</span><span class="iv">Français (natif) · Anglais (professionnel)</span></div>
+          <div class="ir"><span class="ik" data-i18n="info-formation">Formation</span><span class="iv">Master 2 Marketing & Management, IFSM Cocody</span></div>
+          <div class="ir"><span class="ik" data-i18n="info-langues">Langues</span><span class="iv" data-i18n="info-langue-val">Français (natif) · Anglais (professionnel)</span></div>
           <div class="ir"><span class="ik">Email</span><span class="iv"><a href="mailto:salifousangare21@gmail.com">salifousangare21@gmail.com</a></span></div>
           <div class="ir"><span class="ik">LinkedIn</span><span class="iv"><a href="https://www.linkedin.com/in/salifou-sangar%C3%A9-502b241bb/" target="_blank">salifou-sangaré</a></span></div>
           <div class="ir"><span class="ik">Téléphone</span><span class="iv">+225 07 58 35 61 84</span></div>
@@ -753,19 +755,19 @@ footer{padding:26px 64px;border-top:1px solid var(--border);display:flex;justify
 <section class="cta-bg" id="contact">
   <div class="cta-glow"></div>
   <div class="cta-in rev">
-    <div class="cta-sup">Travaillons ensemble</div>
-    <h2 class="cta-h">Prêt à construire quelque chose d'exceptionnel ?</h2>
-    <p class="cta-p">Automatisation, systèmes IA, acquisition digitale — je suis disponible pour discuter de votre projet.</p>
+    <div class="cta-sup" data-i18n="cta-sup">Travaillons ensemble</div>
+    <h2 class="cta-h"><span data-i18n="cta-title">Prêt à construire quelque chose d'exceptionnel ?</span></h2>
+    <p class="cta-p" data-i18n="cta-p">Automatisation, systèmes IA, acquisition digitale — je suis disponible pour discuter de votre projet.</p>
     <div class="cta-btns">
-      <a href="mailto:salifousangare21@gmail.com" class="cm">Envoyer un email</a>
-      <a href="https://www.linkedin.com/in/salifou-sangar%C3%A9-502b241bb/" target="_blank" class="cg">LinkedIn</a>
+      <a href="mailto:salifousangare21@gmail.com" class="cm" data-i18n="cta-btn1">Envoyer un email</a>
+      <a href="https://www.linkedin.com/in/salifou-sangar%C3%A9-502b241bb/" target="_blank" class="cg" data-i18n="cta-btn2">LinkedIn</a>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="fl">© 2025 <span>Salifou Sangaré</span> — Growth Marketer & AI Builder</div>
-  <div class="fr">Abidjan, Côte d'Ivoire · Remote</div>
+  <div class="fr" data-i18n="footer-r">Abidjan, Côte d'Ivoire · Remote</div>
 </footer>
 
 <script>
@@ -816,5 +818,174 @@ function closeMob(){mob.classList.remove('open');}
 if(ham){ham.addEventListener('click',()=>mob.classList.toggle('open'));}
 if(mobClose){mobClose.addEventListener('click',closeMob);}
 </script>
+
+<script>
+// ═══ BILINGUAL SYSTEM ═══
+const TRANSLATIONS = {
+  fr: {
+    // NAV
+    'nav-parcours': 'Parcours',
+    'nav-contact': 'Contact',
+    'nav-btn': 'Me contacter',
+    'mob-parcours': 'Parcours',
+    'mob-contact': 'Contact',
+    'mob-btn': 'Me contacter',
+    // HERO
+    'hero-badge': 'Disponible · Remote · Abidjan, Côte d\'Ivoire',
+    'hero-sub': '<strong>Growth Marketer & AI Builder</strong> — je transforme des processus marketing complexes en systèmes automatisés, intelligents et scalables. 6 ans à construire des pipelines qui performent.',
+    'hero-cta1': 'Voir mes projets',
+    'hero-cta2': 'Me contacter',
+    'hero-status': 'Open to opportunities · Remote',
+    // STATS
+    'stat1': 'Années d\'expérience',
+    'stat2': 'Marchés gérés',
+    'stat3': 'Croissance SEO',
+    'stat4': 'Réduction CPA',
+    // IMPACT
+    'impact-tag': 'Résultats mesurés',
+    'impact-title': 'Des chiffres qui<br><em>ne mentent pas</em>',
+    'impact1': 'Installations mobiles via Google App Campaigns',
+    'impact2': 'Réduction du coût par acquisition (CPA)',
+    'impact3': 'Croissance du trafic organique SEO',
+    'impact4': 'Taux de conversion optimisé via A/B testing',
+    'impact5': 'Temps de traitement leads réduit par IA',
+    'impact6': 'Engagement utilisateur via automation & retargeting',
+    // PORTFOLIO
+    'port-tag': 'Sites web conçus & pilotés',
+    'port-title': 'SEO · SEA · Ads · Automation<br><em>pour chaque client</em>',
+    'badge-freelance': 'Freelance',
+    'badge-emploi': 'Emploi',
+    // AUTOMATION
+    'auto-tag': 'Automation IA — Make',
+    'auto-title': 'Des workflows réels,<br><em>en production</em>',
+    // CLIENTS
+    'clients-tag': 'Ils m\'ont fait confiance',
+    'clients-title': 'Clients & <em>partenaires</em>',
+    // STACK
+    'stack-tag': 'Stack technique',
+    'stack-big': 'Des outils.<em>Des résultats.</em>',
+    'stack-p': 'Je n\'accumule pas les outils. Je les assemble pour créer des systèmes qui travaillent en continu, sans friction.',
+    // EXPERIENCE
+    'exp-tag': 'Parcours',
+    'exp-title': '3 entreprises,<br><em>une seule obsession</em>',
+    // ABOUT
+    'about-tag': 'À propos',
+    'about-role': 'Growth Marketer · AI Builder · Ivoirien',
+    'about-bio': 'Je crois que l\'avenir du marketing n\'est pas dans les tactiques isolées, mais dans les <strong style="color:var(--white)">systèmes intelligents</strong> qui connectent chaque point de contact. C\'est ce que je construis depuis 6 ans — des machines à croissance qui scalent sans friction.',
+    'info-formation': 'Formation',
+    'info-langues': 'Langues',
+    'info-langue-val': 'Français (natif) · Anglais (professionnel)',
+    // CTA
+    'cta-sup': 'Travaillons ensemble',
+    'cta-title': 'Prêt à construire quelque chose d\'exceptionnel ?',
+    'cta-p': 'Automatisation, systèmes IA, acquisition digitale — je suis disponible pour discuter de votre projet.',
+    'cta-btn1': 'Envoyer un email',
+    'cta-btn2': 'LinkedIn',
+    // FOOTER
+    'footer-r': 'Abidjan, Côte d\'Ivoire · Remote',
+  },
+  en: {
+    // NAV
+    'nav-parcours': 'Experience',
+    'nav-contact': 'Contact',
+    'nav-btn': 'Contact me',
+    'mob-parcours': 'Experience',
+    'mob-contact': 'Contact',
+    'mob-btn': 'Contact me',
+    // HERO
+    'hero-badge': 'Available · Remote · Abidjan, Ivory Coast',
+    'hero-sub': '<strong>Growth Marketer & AI Builder</strong> — I turn complex marketing processes into automated, intelligent and scalable systems. 6 years building pipelines that perform.',
+    'hero-cta1': 'View my projects',
+    'hero-cta2': 'Contact me',
+    'hero-status': 'Open to opportunities · Remote',
+    // STATS
+    'stat1': 'Years of experience',
+    'stat2': 'Markets managed',
+    'stat3': 'SEO growth',
+    'stat4': 'CPA reduction',
+    // IMPACT
+    'impact-tag': 'Measured results',
+    'impact-title': 'Numbers that<br><em>speak for themselves</em>',
+    'impact1': 'Mobile installs via Google App Campaigns',
+    'impact2': 'Cost per acquisition (CPA) reduction',
+    'impact3': 'Organic SEO traffic growth',
+    'impact4': 'Conversion rate optimized via A/B testing',
+    'impact5': 'Lead processing time reduced by AI',
+    'impact6': 'User engagement via automation & retargeting',
+    // PORTFOLIO
+    'port-tag': 'Websites designed & managed',
+    'port-title': 'SEO · SEA · Ads · Automation<br><em>for every client</em>',
+    'badge-freelance': 'Freelance',
+    'badge-emploi': 'Employment',
+    // AUTOMATION
+    'auto-tag': 'AI Automation — Make',
+    'auto-title': 'Real workflows,<br><em>in production</em>',
+    // CLIENTS
+    'clients-tag': 'They trusted me',
+    'clients-title': 'Clients & <em>partners</em>',
+    // STACK
+    'stack-tag': 'Tech stack',
+    'stack-big': 'Great tools.<em>Real results.</em>',
+    'stack-p': 'I don\'t collect tools. I assemble them to build systems that work around the clock, without friction.',
+    // EXPERIENCE
+    'exp-tag': 'Experience',
+    'exp-title': '3 companies,<br><em>one obsession</em>',
+    // ABOUT
+    'about-tag': 'About',
+    'about-role': 'Growth Marketer · AI Builder · Ivorian',
+    'about-bio': 'I believe the future of marketing is not in isolated tactics, but in <strong style="color:var(--white)">intelligent systems</strong> that connect every touchpoint. That\'s what I\'ve been building for 6 years — growth machines that scale without friction.',
+    'info-formation': 'Education',
+    'info-langues': 'Languages',
+    'info-langue-val': 'French (native) · English (professional)',
+    // CTA
+    'cta-sup': 'Let\'s work together',
+    'cta-title': 'Ready to build something exceptional?',
+    'cta-p': 'Automation, AI systems, digital acquisition — I\'m available to discuss your project.',
+    'cta-btn1': 'Send an email',
+    'cta-btn2': 'LinkedIn',
+    // FOOTER
+    'footer-r': 'Abidjan, Ivory Coast · Remote',
+  }
+};
+
+let currentLang = 'fr';
+
+function detectLang() {
+  const browserLang = (navigator.language || navigator.userLanguage || 'fr').toLowerCase();
+  return browserLang.startsWith('en') ? 'en' : 'fr';
+}
+
+function applyLang(lang) {
+  currentLang = lang;
+  const t = TRANSLATIONS[lang];
+  document.documentElement.lang = lang;
+
+  // Apply all translations
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) {
+      el.innerHTML = t[key];
+    }
+  });
+
+  // Update lang toggle button
+  const btn = document.getElementById('lang-toggle');
+  if (btn) btn.textContent = lang === 'fr' ? 'EN' : 'FR';
+
+  // Save preference
+  localStorage.setItem('lang', lang);
+}
+
+function toggleLang() {
+  applyLang(currentLang === 'fr' ? 'en' : 'fr');
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  const saved = localStorage.getItem('lang');
+  const lang = saved || detectLang();
+  applyLang(lang);
+});
+</script>
+
 </body>
 </html>
